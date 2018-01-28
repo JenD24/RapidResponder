@@ -1,47 +1,30 @@
-<!-- Pixelhacks II 1/27/18
-TEAM MEMBERS: Jenny, Brycedia, Litzy
- -->
+import React, {Componenet} from 'react';
+import {Text, View, StyleSheet } from 'react-native';
 
- import React, { Component } from 'react';
- import { Text, View } from 'react-native';
- import { TheGreatestComponentInTheWorld } from './your-native-code';
-
- class SomethingFast extends Component {
-   render() {
-     return (
-       <View>
-         <TheGreatestComponentInTheWorld />
-         <Text>
-          Por favor ponga su informacion. Esta applicacion se llama 'Unidos'
-         </Text>
-
-         <Text>
-         Please put your information. This application is called 'Unidos'
-         </Text>
-       </View>
-     );
-   }
- }
-
-
- // code from SafeTrek
- //import the unirest module - make sure to install it by running "npm install unirest --save"
-var unirest = require('unirest');
-
-var body = {
-  name: "John Smith",
-  phone: "5555555555",
-  pin: "1234",
-  location: {
-    lat: 34.32334,
-    lon: -117.3343,
-    accuracy: 5
+export default class App extends Component {
+  render(){
+    return (
+      <View style ={styles.container}>
+        <Text style ={styles.paragraph}>
+          Welcome to Unidos! Helping el pueblo!
+        </Text>
+      </View>
+    );
   }
-};
+}
 
-unirest.post('https://sandbox.sendpolice.com/v1/alerts?user_key=')
-  .type('json')
-  .send(body)
-  .end(function (response) {
-    console.log(response);
-  });
+const styles = StyleSheet.create({
+  container:{
+    justifyContent:'center',
+    marginTop:50,
+    padding:20,
+    backgroundColor:'#ffffff',
+  },
+  paragraph:{
+    margin:24,
+    fontSize:18,
+    fontWeight:'bold',
+    textAlign:'center',
+    color:'#34495E',
+  },
+});
